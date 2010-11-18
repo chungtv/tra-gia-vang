@@ -54,7 +54,7 @@ public class UDPSC_Thread extends Thread {
             for(int i=0;i<dola.size();++i)
             {
                 System.out.println(a.get(i*5+1).toString());
-                if(st.equals(a.get(i*5+1).toString()))
+                if(st.equals(a.get(i*5+1).toString()) || st.equals("1"))
                 {
 
                     for(int j=0;j<5;++j)
@@ -64,9 +64,10 @@ public class UDPSC_Thread extends Thread {
                        tam.append("+");
                             //System.out.println(a.get(i*5+j));
                     }
-                    return tam.toString();
+                    
                 }
             }
+            return tam.toString();
 
         }
         
@@ -78,7 +79,7 @@ public class UDPSC_Thread extends Thread {
             String[][] sb=url.ArrShowGiaVang();
             StringBuilder tam = new StringBuilder();
             
-            if(st.equals("TPHCM")){
+            if(st.equals("TPHCM") || st.equals("1")){
                 
                 for (int i=0;i<9;i++){
                     tam.append("TPHCM");
@@ -91,7 +92,7 @@ public class UDPSC_Thread extends Thread {
                     tam.append("+");
                 }
             }
-            if(st.equals("Hà Nội")){
+            if(st.equals("Hà Nội") || st.equals("1")){
                 System.out.println("dgđfdfdfdfd");
                     tam.append("Hà Nội");
                     tam.append("+");
@@ -103,7 +104,7 @@ public class UDPSC_Thread extends Thread {
                     tam.append("+");
 
             }
-            if(st.equals("Đà Nẵng")){
+            if(st.equals("Đà Nẵng") || st.equals("1")){
                     tam.append("Đà Nẵng");
                     tam.append("+");
                     tam.append(sb[10][0]);
@@ -114,7 +115,7 @@ public class UDPSC_Thread extends Thread {
                     tam.append("+");
 
             }
-            if(st.equals("Nha Trang")){
+            if(st.equals("Nha Trang") || st.equals("1")){
                     tam.append("Nha Trang");
                     tam.append("+");
                     tam.append(sb[11][0]);
@@ -125,7 +126,7 @@ public class UDPSC_Thread extends Thread {
                     tam.append("+");
 
             }
-            if(st.equals("Cần Thơ")){
+            if(st.equals("Cần Thơ") || st.equals("1")){
                     tam.append("Cần Thơ");
                     tam.append("+");
                     tam.append(sb[12][0]);
