@@ -57,7 +57,7 @@ public class UDPSC_Thread extends Thread {
             StringBuilder tam = new StringBuilder();
             for(int i=0;i<dola.size();++i)
             {
-                 System.out.println(st);
+                System.out.println(a.get(i*5+1).toString());
                 if(st.equals(a.get(i*5+1).toString()))
                 {
 
