@@ -144,7 +144,7 @@ public class GiaoDienClient extends javax.swing.JFrame {
 
         jLabel1.setText("Khu vực");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TPHCM", "Hà Nội", "Đà Nẵng", "Nha Trang", "Cần Thơ" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "All", "TPHCM", "Hà Nội", "Đà Nẵng", "Nha Trang", "Cần Thơ" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -211,8 +211,42 @@ public class GiaoDienClient extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(this.jComboBox2.getSelectedIndex() == 0)
         {
+            StringBuilder s = new StringBuilder();
+            s.append("01");
+            UDPCC thucThi = new UDPCC();
+            try {
 
-            return;
+            ArrayList a = thucThi.ketNoi(s.toString());
+            Object[][] obj = new Object [a.size()/5][5];
+            for(int i=0;i<a.size()/5;++i)
+                for(int j=0;j<5;++j)
+                {
+                    System.out.println("fff");
+                    obj[i][j]= a.get(i*5+j);
+                    //System.out.println(a.get(i*5+j));
+                }
+
+             jTable2.setModel(new javax.swing.table.DefaultTableModel(
+                  obj,
+                new String [] {
+                    "Mã", "Tên Ngoại tệ", "Mua tiền mặt", "Mua chuyển khoản", "Bán"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
+            });
+            jScrollPane2.setViewportView(jTable2);
+
+
+            } catch (Exception ex) {
+                Logger.getLogger(GiaoDienClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                return;
         }
         thuGon(this.jComboBox2.getSelectedItem().toString());
         
@@ -222,7 +256,38 @@ public class GiaoDienClient extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
+         if(this.jComboBox1.getSelectedIndex() == 0)
+        {
+            StringBuilder s = new StringBuilder();
+            s.append("11");
+            UDPCC thucThi = new UDPCC();
+            System.out.println(s.toString());
+            try {
 
+                ArrayList a = thucThi.ketNoi(s.toString());
+                Object[][] obj = new Object [a.size()/4][4];
+                for(int i=0;i<a.size()/4;++i)
+                    for(int j=0;j<4;++j)
+                    {
+                        System.out.println("fff");
+                        obj[i][j]= a.get(i*4+j);
+                        //System.out.println(a.get(i*5+j));
+                    }
+
+                jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                    obj,
+                new String [] {
+                    "Khu Vực", "Loại Vàng", "Giá Bán", "Giá Mua"
+                }
+            ));
+            jScrollPane1.setViewportView(jTable1);
+
+
+            } catch (Exception ex) {
+                Logger.getLogger(GiaoDienClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return ;
+        }
         thuGon1(this.jComboBox1.getSelectedItem().toString());
     }//GEN-LAST:event_jComboBox1ActionPerformed
     private void thuGon(String st)
@@ -296,6 +361,7 @@ public class GiaoDienClient extends javax.swing.JFrame {
             Logger.getLogger(GiaoDienClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     /**
     * @param args the command line arguments
     */
