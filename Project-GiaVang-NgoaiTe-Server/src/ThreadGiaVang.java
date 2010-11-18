@@ -19,8 +19,7 @@ public class ThreadGiaVang extends Thread {
     public void run(){
         while(true)
         try {
-            Thread.sleep(300000);
-            System.out.println("ssss");
+            Thread.sleep(300000);            
             jM.getInfor1();
             jM.getInfor();
             
