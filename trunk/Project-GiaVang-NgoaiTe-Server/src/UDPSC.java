@@ -9,6 +9,7 @@ import java.net.*;
 class UDPSC extends Thread
 {
     private UDPSC_Thread thread1;
+    DatagramSocket socket;
     public UDPSC() {
 
     }
@@ -17,27 +18,34 @@ class UDPSC extends Thread
         try{
             int port = 2812;
             // tao datagramsocket
-            DatagramSocket socket;
+            
             DatagramPacket packet;
+            socket = new DatagramSocket(port);
             while(true)
             {
                 byte []data;
-                socket = new DatagramSocket(port);
+                
                 data = new byte[1024];
                 packet = new DatagramPacket(data,data.length);
                 // nhan goi du lieu goi tu may client;
                 socket.receive(packet);
                 System.out.println("nguyen pham hoai an");
                 thread1 =new UDPSC_Thread(packet,socket);
-                thread1.start();
-                //socket.close();
+                thread1.start();    
             }
+
         }
+
         catch(Exception e){
 
          }
 
       }
+
+    public void stops()
+    {
+        socket.close();
+    }
 
      
 
