@@ -1,9 +1,11 @@
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import Dola.PhanTich.GiaDoLa;
 
 /*
  * To change this template, choose Tools | Templates
@@ -25,9 +27,11 @@ public class JfrMain extends javax.swing.JFrame {
     /** Creates new form JfrMain */
     public JfrMain() {
          try {
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+
             } catch (Exception e) {
             e.printStackTrace();
             }
@@ -46,6 +50,8 @@ public class JfrMain extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Tra Gia Vang Va Gia NGoai Te"); // NOI18N
@@ -57,6 +63,7 @@ public class JfrMain extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new java.awt.GridLayout());
 
         jScrollPane1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "NGUỒN CTY SJC VIỆT NAM", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
@@ -70,22 +77,37 @@ public class JfrMain extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
+        getContentPane().add(jScrollPane1);
+
+        jScrollPane2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tỉ Giá Ngoại Tệ Nguồn NH-Ngoại Thương", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Mã", "Tên Ngoại tệ", "Mua tiền mặt", "Mua chuyển khoản", "Bán"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTable2);
+        jTable2.getColumnModel().getColumn(0).setPreferredWidth(50);
+        jTable2.getColumnModel().getColumn(1).setPreferredWidth(120);
+        jTable2.getColumnModel().getColumn(2).setPreferredWidth(100);
+        jTable2.getColumnModel().getColumn(3).setPreferredWidth(100);
+        jTable2.getColumnModel().getColumn(4).setPreferredWidth(100);
+
+        getContentPane().add(jScrollPane2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -94,7 +116,8 @@ public class JfrMain extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             this.getInfor();
-        } catch (IOException ex) {
+            this.getInfor1();
+        } catch (Exception ex) {
             System.out.println(ex.toString());
         }
         tgv=new ThreadGiaVang(this);
@@ -137,9 +160,41 @@ public class JfrMain extends javax.swing.JFrame {
             mode.addRow(new Object[]{"Cần Thơ",sb[12][0],sb[12][1],sb[12][2]});
 
         }
+        public void getInfor1() throws IOException, Exception{
+             //System.out.println("haiaoa");
+            GiaDoLa dola = new GiaDoLa();
+            ArrayList a = dola.layGiaDoLa();
+            Object[][] obj = new Object[dola.size()][5];
+            obj[0][0]=a.get(0);
+            for(int i=0;i<dola.size();++i)
+                for(int j=0;j<5;++j)
+                {
+                    System.out.println("haiaoabgggggggggggggggggg");
+                    obj[i][j]= a.get(i*5+j);
+                    //System.out.println(a.get(i*5+j));
+                }
+            jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            obj,
+            new String [] {
+                "Mã", "Tên Ngoại tệ", "Mua tiền mặt", "Mua chuyển khoản", "Bán"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
     private claUrl url;
     private ThreadGiaVang tgv;

@@ -15,11 +15,15 @@ public class ThreadGiaVang extends Thread {
     public ThreadGiaVang(JfrMain j){
         jM=j;
     }
+
     public void run(){
         while(true)
         try {
             Thread.sleep(300000);
+            System.out.println("ssss");
+            jM.getInfor1();
             jM.getInfor();
+            
         } catch (Exception ex) {
             System.out.print(ex);
         }

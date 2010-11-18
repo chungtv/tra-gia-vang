@@ -1,0 +1,113 @@
+	<table class="tbl-01 rateTable" cellspacing="1" border="0" id="ctl00_Content_ExrateView">
+		<tr>
+			<th scope="col">M&#227; NT</th><th scope="col">T&#234;n ngoại tệ</th><th scope="col">Mua tiền mặt</th><th scope="col">Mua chuyển khoản</th><th scope="col">Bán</th>
+		</tr><tr class="odd">
+			<td class="code">AUD</td><td class="code">AUST.DOLLAR</td><td>
+                20,073.98
+            </td><td>20,195.15</td><td>
+                20,537.69
+            </td>
+		</tr><tr class="even">
+			<td class="code">CAD</td><td class="code">CANADIAN DOLLAR</td><td>
+                19,970.30
+            </td><td>20,151.66</td><td>
+                20,452.52
+            </td>
+		</tr><tr class="odd">
+			<td class="code">CHF</td><td class="code">SWISS FRANCE</td><td>
+                20,640.97
+            </td><td>20,786.48</td><td>
+                21,139.06
+            </td>
+		</tr><tr class="even">
+			<td class="code">DKK</td><td class="code">DANISH KRONE</td><td>
+                -
+            </td><td>3,737.57</td><td>
+                3,816.20
+            </td>
+		</tr><tr class="odd">
+			<td class="code">EUR</td><td class="code">EURO</td><td>
+                27,851.22
+            </td><td>27,935.03</td><td>
+                28,352.10
+            </td>
+		</tr><tr class="even">
+			<td class="code">GBP</td><td class="code">BRITISH POUND</td><td>
+                32,537.60
+            </td><td>32,766.97</td><td>
+                33,256.17
+            </td>
+		</tr><tr class="odd">
+			<td class="code">HKD</td><td class="code">HONGKONG DOLLAR</td><td>
+                2,637.20
+            </td><td>2,655.79</td><td>
+                2,695.44
+            </td>
+		</tr><tr class="even">
+			<td class="code">INR</td><td class="code">INDIAN RUPEE</td><td>
+                -
+            </td><td>451.48</td><td>
+                472.18
+            </td>
+		</tr><tr class="odd">
+			<td class="code">JPY</td><td class="code">JAPANESE YEN</td><td>
+                244.90
+            </td><td>247.37</td><td>
+                251.57
+            </td>
+		</tr><tr class="even">
+			<td class="code">KRW</td><td class="code">SOUTH KOREAN WON</td><td>
+                -
+            </td><td>16.51</td><td>
+                20.27
+            </td>
+		</tr><tr class="odd">
+			<td class="code">KWD</td><td class="code">KUWAITI DINAR</td><td>
+                -
+            </td><td>72,936.12</td><td>
+                74,769.04
+            </td>
+		</tr><tr class="even">
+			<td class="code">MYR</td><td class="code">MALAYSIAN RINGGIT</td><td>
+                -
+            </td><td>6,548.38</td><td>
+                6,686.14
+            </td>
+		</tr><tr class="odd">
+			<td class="code">NOK</td><td class="code">NORWEGIAN KRONER</td><td>
+                -
+            </td><td>3,414.82</td><td>
+                3,486.66
+            </td>
+		</tr><tr class="even">
+			<td class="code">RUB</td><td class="code">RUSSIAN RUBLE</td><td>
+                -
+            </td><td>601.91</td><td>
+                739.22
+            </td>
+		</tr><tr class="odd">
+			<td class="code">SEK</td><td class="code">SWEDISH KRONA</td><td>
+                -
+            </td><td>2,970.55</td><td>
+                3,033.04
+            </td>
+		</tr><tr class="even">
+			<td class="code">SGD</td><td class="code">SINGAPORE DOLLAR</td><td>
+                15,752.34
+            </td><td>15,863.38</td><td>
+                16,100.22
+            </td>
+		</tr><tr class="odd">
+			<td class="code">THB</td><td class="code">THAI BAHT</td><td>
+                677.83
+            </td><td>677.83</td><td>
+                708.90
+            </td>
+		</tr><tr class="even">
+			<td class="code">USD</td><td class="code">US DOLLAR</td><td>
+                19,495.00
+            </td><td>19,495.00</td><td>
+                19,500.00
+            </td>
+		</tr>
+	</table>
