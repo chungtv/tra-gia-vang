@@ -39,9 +39,6 @@ public class UDPSC_Thread extends Thread {
             System.out.println("tien goi");
             socket.send(packet);
             System.out.println();
-
-
-            socket.close();
         }
         catch(Exception e)
         {}
