@@ -151,7 +151,6 @@ public class JfrMain extends javax.swing.JFrame {
                     }
                 );
             jTable1.setModel(mode);
-
             for (int i=0;i<9;i++)
                 mode.addRow(new Object[]{"TPHCM",sb[i][0],sb[i][1],sb[i][2]});
             mode.addRow(new Object[]{"Hà Nội",sb[9][0],sb[9][1],sb[9][2]});
