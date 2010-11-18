@@ -1,8 +1,6 @@
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 import Dola.PhanTich.GiaDoLa;
@@ -170,8 +168,7 @@ public class JfrMain extends javax.swing.JFrame {
             obj[0][0]=a.get(0);
             for(int i=0;i<dola.size();++i)
                 for(int j=0;j<5;++j)
-                {
-                    System.out.println("haiaoabgggggggggggggggggg");
+                {                   
                     obj[i][j]= a.get(i*5+j);
                     //System.out.println(a.get(i*5+j));
                 }

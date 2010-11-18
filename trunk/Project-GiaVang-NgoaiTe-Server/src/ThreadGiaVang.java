@@ -1,15 +1,6 @@
 
-import java.util.logging.Level;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author nvnamsh
- */
+//nvnamsh
 public class ThreadGiaVang extends Thread {
     private JfrMain jM;
     public ThreadGiaVang(JfrMain j){
