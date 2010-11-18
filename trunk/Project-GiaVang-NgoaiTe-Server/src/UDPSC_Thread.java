@@ -8,11 +8,8 @@
  * @author WELLCOME
  */
 import Dola.PhanTich.GiaDoLa;
-import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class UDPSC_Thread extends Thread {
     private DatagramPacket packet;
@@ -57,8 +54,7 @@ public class UDPSC_Thread extends Thread {
                 if(st.equals(a.get(i*5)))
                 {
                     for(int j=0;j<5;++j)
-                    {
-                       System.out.println("haiaoabgggggggggggggggggg");
+                    {                     
                        tam.append(a.get(i*5+j));
                        tam.append("+");
                             //System.out.println(a.get(i*5+j));
