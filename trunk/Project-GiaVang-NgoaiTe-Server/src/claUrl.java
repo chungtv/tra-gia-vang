@@ -70,29 +70,13 @@ public class claUrl {
                this.getFile()+":"+String.valueOf(this.getPort());               
    }
 
-   //xuat thong tin ra file nhi phan
-   
-    public StringBuffer viewSource() throws IOException{
-        StringBuffer sb=new StringBuffer();
-        DataInputStream dis=new DataInputStream(url.openStream());
-        String st=new String();
-        try {
-            while ((st = dis.readLine()) != null) {
-                sb.append(st);
-                sb.append("\n");
-            }
-        } catch (IOException ex) {
-            System.out.println(ex.toString());
-        }
-        return sb;
-    }
-    
      public StringBuffer ShowGiaVang() throws IOException{
         StringBuffer sb=new StringBuffer();
         DataInputStream dis=new DataInputStream(url.openStream());
+        BufferedReader br = new BufferedReader(new InputStreamReader(dis,"utf-8"));
         String st=new String();
         try {
-            while ((st = dis.readLine()) != null) {
+            while ((st = br.readLine()) != null) {
                 if(this.xuLyChuoi(st)!=null){
                     sb.append(this.xuLyChuoi(st));
                 sb.append("\n");
@@ -135,8 +119,10 @@ public class claUrl {
       public String[][] ArrShowGiaVang(){
         String[][] sb=new String[13][3];
         DataInputStream dis=null;
+        BufferedReader br=null ;
         try {
             dis = new DataInputStream(url.openStream());
+            br = new BufferedReader(new InputStreamReader(dis,"utf-8"));
         } catch (IOException ex) {
             System.out.println(ex.toString());
         }
@@ -147,7 +133,7 @@ public class claUrl {
         String st=new String();
         int i=0;
         try {
-            while ((st = dis.readLine()) != null) {
+            while ((st = br.readLine()) != null) {
                 if(this.xuLyChuoi(st)!=null){
                     sb[i/3][i%3]=this.xuLyChuoi(st);
                     i++;
