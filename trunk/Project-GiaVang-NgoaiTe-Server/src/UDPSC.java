@@ -27,8 +27,10 @@ class UDPSC extends Thread
                 packet = new DatagramPacket(data,data.length);
                 // nhan goi du lieu goi tu may client;
                 socket.receive(packet);
+                System.out.println("nguyen pham hoai an");
                 thread1 =new UDPSC_Thread(packet,socket);
-                socket.close();
+                thread1.start();
+                //socket.close();
             }
         }
         catch(Exception e){
