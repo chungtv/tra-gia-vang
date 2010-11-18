@@ -122,6 +122,8 @@ public class JfrMain extends javax.swing.JFrame {
         }
         tgv=new ThreadGiaVang(this);
         tgv.start();
+        server = new UDPSC();
+        server.start();
     }//GEN-LAST:event_formWindowOpened
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -190,6 +192,7 @@ public class JfrMain extends javax.swing.JFrame {
 
 
     }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -198,4 +201,5 @@ public class JfrMain extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private claUrl url;
     private ThreadGiaVang tgv;
+    private UDPSC server;
 }
