@@ -37,8 +37,10 @@ class UDPCC
                 for(int i=0;i<kq.length();++i)
                 {
                     if(kq.charAt(i)== '+') {
+                        
+                        System.out.println(kq.substring(tam, i-1));
+                        a.add(kq.substring(tam, i-1));
                         tam = i+1;
-                        a.add(kq.substring(tam, i-1));                     
                     }
                 }
                 return a;
