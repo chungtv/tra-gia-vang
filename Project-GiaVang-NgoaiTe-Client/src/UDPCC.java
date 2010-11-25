@@ -1,7 +1,6 @@
 /*
  * author Nguyen Pham Hoai An
         */
-import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 class UDPCC
